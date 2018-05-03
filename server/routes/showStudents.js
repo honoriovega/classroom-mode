@@ -18,7 +18,8 @@ router.get('/', function(req, res) {
           let completedChallengesCount =
             student.completedChallengesCount ? student.completedChallengesCount : 0;
           student.newSubmissionsCount =
-            fccResults.completedChallenges.length - completedChallengesCount;
+            Math.abs(fccResults.completedChallenges.length - completedChallengesCount);
+          
         }
         numResponsesReceived++;
         if (numResponsesReceived >= numStudents) {
