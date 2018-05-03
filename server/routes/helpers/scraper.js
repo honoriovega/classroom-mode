@@ -4,8 +4,7 @@
 //     if successful, the results of the api call should also be included as second parameter into the callback
 var request = require('request');
 
-const fccBaseUrl = 'https://fcc-profile-scraper.herokuapp.com/user/';
-
+const fccBaseUrl = process.env.SCRAPER_URL;
 
 function fetchUserInfoFromFCC(githubName, callback) {
     request.get(fccBaseUrl + githubName, function (error, response, body){
